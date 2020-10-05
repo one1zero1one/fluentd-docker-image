@@ -53,6 +53,7 @@ RUN groupadd -r fluent && useradd -r -g fluent fluent \
 COPY fluent.conf /fluentd/etc/
 COPY entrypoint.sh /bin/
 
+RUN gem install fluent-plugin-elasticsearch fluent-plugin-detect-exceptions fluent-plugin-multi-format-parser fluent-plugin-prometheus fluent-plugin-record-modifier
 
 ENV FLUENTD_CONF="fluent.conf"
 
